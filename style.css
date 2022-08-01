@@ -1,0 +1,573 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Smartphone Display */
+/* Navbar CSS */
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(248, 248, 248);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+}
+
+nav .navheader h1{
+    font-size: 2rem;
+    color: rgb(52, 175, 69); 
+}
+
+nav ul{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(248, 248, 248);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all .5s;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(52, 175, 69);
+    transition: .2s;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: rgb(100, 238, 119);
+}
+
+nav ul.slide{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hamburger Menu */
+.menu-icon{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.menu-icon span{
+    background-color: rgb(52, 175, 69);
+    width: 28px;
+    height: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.menu-icon input{
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    z-index: 2;
+    opacity: 0;
+}
+
+/* Hamburger Menu Animation */
+.menu-icon span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-icon span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-icon input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-icon input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(0, -3px);
+}
+
+.menu-icon input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Hero Section CSS */
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero .description{
+    width: 80%;
+    order: 2;
+    margin-top: 20px;
+}
+
+.hero .description p{
+    margin-top: 20px;
+}
+
+.hero .description button{
+    font-size: 20px;
+    width: 12em;
+    height: 3em;
+    border: none;
+    background-color: rgb(46, 167, 62);
+    color: rgb(246, 246, 246);
+    border-radius: 4px;
+    transition: .3s;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.hero .description button:hover{
+    font-size: 20px;
+    width: 12em;
+    height: 3em;
+    border: none;
+    background-color: rgb(40, 145, 54);
+    color: rgb(246, 246, 246);
+    border-radius: 4px;
+}
+
+.hero .hero-image{
+    margin-top: 100px;
+    order: 1;
+}
+
+/* Portfolio Section CSS */
+.portfolio{
+    width: 100%;
+    margin: 200px auto;
+}
+
+.portfolio .portfolio-header h2{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.portfolio .portfolio-container{
+    width: 100%;
+    background-color: rgb(207, 253, 213);
+}
+
+.portfolio .portfolio-container .portfolio-projects{
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio .portfolio-container .portfolio-projects .portfolio-1,
+.portfolio .portfolio-container .portfolio-projects .portfolio-2,
+.portfolio .portfolio-container .portfolio-projects .portfolio-3 {
+    margin-top: 30px;
+}
+
+.portfolio .portfolio-container .portfolio-projects .portfolio-1 figure a,
+.portfolio .portfolio-container .portfolio-projects .portfolio-2 figure a,
+.portfolio .portfolio-container .portfolio-projects .portfolio-3 figure a {
+    color: rgb(30, 110, 41);
+}
+
+.portfolio .portfolio-container .portfolio-projects .portfolio-1 img,
+.portfolio .portfolio-container .portfolio-projects .portfolio-2 img,
+.portfolio .portfolio-container .portfolio-projects .portfolio-3 img{
+    border-radius: 4px;
+}
+
+/* Work Section CSS */
+.work{
+    width: 80%;
+    margin: -100px auto;
+}
+
+.work .work-header h2{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.work .work-container{
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, 300px);
+    gap: 50px;    
+}
+
+.work .work-container .works-1,
+.work .work-container .works-2,
+.work .work-container .works-3{
+    box-shadow: 0 15px 15px rgba(45, 45, 45, 0.189);
+    border-radius: 5px;
+}
+
+.work .work-container .works-1 .works-images1,
+.work .work-container .works-2 .works-images2,
+.work .work-container .works-3 .works-images3{
+    width: 100%;
+    height: 150px;
+    border-radius: 4px 4px 0 0;
+}
+
+.work .work-container .works-1 .works-images1{
+    background-image: url(img/images1.jpg);
+}
+
+.work .work-container .works-2 .works-images2{
+    background-image: url(img/images2.jpg);
+    background-position: 0 -50px;
+}
+
+.work .work-container .works-3 .works-images3{
+    background-image: url(img/images3.jpg);
+}
+
+.work .work-container .works-1 h3,
+.work .work-container .works-2 h3,
+.work .work-container .works-3 h3{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.work .work-container .works-1 p,
+.work .work-container .works-2 p,
+.work .work-container .works-3 p{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+/* Our Teams CSS */
+.teams{
+    width: 80%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teams .teams-header h2{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.teams .teams-container{
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, 200px);
+    gap: 200px;
+}
+
+.teams .teams-container .teams-1 figcaption,
+.teams .teams-container .teams-2 figcaption,
+.teams .teams-container .teams-3 figcaption{
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.teams .teams-container .teams-1 p,
+.teams .teams-container .teams-2 p,
+.teams .teams-container .teams-3 p{
+    color: rgb(73, 73, 73);
+    text-align: center;
+}
+
+/* Testimonial CSS */
+.testimoni{
+    width: 80%;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimoni .testimoni-header h2{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.testimoni .testimoni-container{
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, 250px);
+}
+
+.testimoni .testimoni-container .profile-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimoni .testimoni-container .profile-one{
+    background-image: url(img/images7.png);
+}
+
+.testimoni .testimoni-container .profile-two{
+    background-image: url(img/images8.png);
+}
+
+.testimoni .testimoni-container .profile-three{
+    background-image: url(img/images9.png);
+}
+
+.testimoni .testimoni-container .testimoni-1 p,
+.testimoni .testimoni-container .testimoni-2 p,
+.testimoni .testimoni-container .testimoni-3 p{
+    font-style: italic;
+}
+
+/* Footer Section CSS */
+footer{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(36, 125, 48);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(250, 250, 250);
+}
+
+footer .footer-header h3,
+footer .faq .faq-header h3{
+    font-size: 1.7rem;
+}
+
+footer .faq{
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .faq a{
+    color: rgb(250, 250, 250);
+    text-align: center;
+}
+
+footer .social-media{
+    margin-top: 20px;
+}
+
+footer .social-media .social-icon-container{
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+footer .social-media .social-icon-container .social-ic{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 50%;
+}
+
+footer .social-media .social-icon-container .social-ic:nth-child(3){
+    order: 1;
+}
+
+footer .social-media .social-icon-container .social-ic:nth-child(1){
+    order: 3;
+}
+
+footer .social-media .social-icon-container .social-ic:nth-child(2){
+    order: 2;
+}
+
+footer .social-media .social-icon-container .social-ic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablet Display */
+@media screen and (min-width: 768px){
+    /* Hero Section CSS */
+    .hero{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .hero .description{
+        order: 1;
+        width: 40%;
+    }
+
+    .hero .description .hero-desc h2{
+        font-size: 1.8rem;
+    }
+
+    /* Portfolio Section CSS */
+    .portfolio .portfolio-container .portfolio-projects{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* Work Section CSS */
+    .work .work-container{
+        grid-template-columns: 300px 300px;
+        grid-template-rows: repeat(3, 300px);
+        gap: 50px;    
+    }
+
+    /* Teams Section CSS */
+    .teams{
+        margin-top: -200px;
+    }
+
+    .teams .teams-container{
+        grid-template-columns: 300px 300px;
+        grid-template-rows: repeat(3, 200px);
+        column-gap: 50px;
+    }
+
+    /* Testimonial Section CSS */
+    .testimoni{
+        margin-top: -100px;
+    }
+
+    .testimoni .testimoni-container{
+        grid-template-columns: 300px 300px;
+        grid-template-rows: repeat(3, 250px);
+        column-gap: 50px;
+    }
+
+    /* Footer Section CSS */
+    footer{
+        height: 400px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+
+    footer .social-media{
+        width: 50%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    footer .social-media .social-icon-container{
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        margin-top: 30px;
+    }
+
+
+
+
+}
+
+/* Desktop Display */
+@media screen and (min-width: 1280px){
+    /* Navigation CSS */
+    nav ul{
+        width: 40%;
+        height: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        opacity: 1;
+        transform: translateY(0);
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    nav ul li{
+        background-color: none;
+    }
+
+    nav ul li a:hover{
+        text-decoration: none;
+        color: rgb(70, 216, 89);
+        font-size: 2rem;
+    }
+
+    .menu-icon span, .menu-icon input{
+        display: none;
+    }
+
+    /* Work Section CSS */
+    .work .work-container{
+        width: 90%;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: repeat(3, 300px);
+        gap: 50px;
+        justify-content: start;    
+    }
+
+    /* Teams Section CSS */
+    .teams{
+        margin-top: -550px;
+    }
+
+    .teams .teams-container{
+        width: 90%;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: repeat(3, 200px);
+        column-gap: 50px;
+        justify-content: start;
+    }
+
+    /* Testimonial Section CSS */
+    .testimoni{
+        margin-top: -550px;
+    }
+
+    .testimoni .testimoni-container{
+        width: 90%;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: repeat(3, 250px);
+        column-gap: 55px;
+    }
+
+    /* Footer Section CSS */
+    footer{
+        margin-top: -400px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+}
