@@ -280,7 +280,7 @@ nav ul.slide{
     margin: 30px auto;
     display: grid;
     grid-template-columns: 200px;
-    grid-template-rows: repeat(3, 200px);
+    grid-template-rows: repeat(3, 150px);
     gap: 200px;
 }
 
@@ -297,6 +297,12 @@ nav ul.slide{
 .teams .teams-container .teams-3 p{
     color: rgb(73, 73, 73);
     text-align: center;
+}
+
+.teams .teams-container .teams-1 img,
+.teams .teams-container .teams-2 img,
+.teams .teams-container .teams-3 img{
+    width: 250px;
 }
 
 /* Testimonial CSS */
@@ -458,6 +464,12 @@ footer .social-media .social-icon-container .social-ic{
         grid-template-columns: 300px 300px;
         grid-template-rows: repeat(3, 200px);
         column-gap: 50px;
+    }
+
+    .teams .teams-container .teams-1 img,
+    .teams .teams-container .teams-2 img,
+    .teams .teams-container .teams-3 img{
+        width: 100%;
     }
 
     /* Testimonial Section CSS */
